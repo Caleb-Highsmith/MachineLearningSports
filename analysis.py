@@ -1,7 +1,6 @@
-from sklearn.datasets import fetch_openml
+from sklearn import linear_model
+reg = linear_model.Ridge(alpha=.5)
+reg.fit([[0, 0], [0, 0], [1, 1]], [0, .1, 1])
+print(reg.coef_)
+print(reg.intercept_)
 
-X_adult, y_adult = fetch_openml("adult", version=2, return_X_y=True)
-
-# Remove redundant and non-feature columns
-X_adult = X_adult.drop(["education-num", "fnlwgt"], axis="columns")
-X_adult.dtypes
