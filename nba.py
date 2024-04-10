@@ -1,3 +1,5 @@
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 from nba_api.stats.static import teams, players
 from nba_api.stats.endpoints import cumestatsteamgames, cumestatsteam, gamerotation
 import pandas as pd
