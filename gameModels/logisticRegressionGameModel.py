@@ -19,6 +19,7 @@ print(data['TEAM_ID'].isnull().sum())
 
 def get_past_10_games(df):
     return df.groupby(['TEAM_ID', 'SEASON'], as_index=False).apply(lambda x: x.sort_values(by='GAME_DATE', ascending=False).head(10))
+
 def feature_engineering(df):
     # Calculate total wins in the past 10 games for each team in each season
     df['TOTAL_WINS_PAST_10'] = df.groupby(['TEAM_ID', 'SEASON'])['W'].transform('sum')
