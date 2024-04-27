@@ -46,3 +46,10 @@ scaled_val_data = scaler.transform(validation.drop(['HOME_W','SEASON'],axis=1))
 # How the model performs on unseen data
 y_pred = model.predict(scaled_val_data)
 print(classification_report(validation['HOME_W'],y_pred)) 
+
+
+
+
+
+
+
